@@ -225,7 +225,7 @@ public class CodingProjectWeek04 {
 			} while (lastName.length() == 0);
 		}
 
-		System.out.println("The full name is: " + fullName(firstName, lastName));
+		System.out.println("\nThe full name is: " + fullName(firstName, lastName));
 
 		/**
 		 * 9. Write a method that takes an Array of int and returns true if the sum of
@@ -289,7 +289,7 @@ public class CodingProjectWeek04 {
 		boolean isHotOutside = false;
 		double moneyInPocket = 0.0;
 
-		System.out.println("Is it hot outside today (Y/N)? ");
+		System.out.print("Is it hot outside today (Y/N)? ");
 		String hotAnswer = sc.next();
 
 		if (!(hotAnswer.equalsIgnoreCase("y")) && !(hotAnswer.equalsIgnoreCase("n"))) {
@@ -306,7 +306,7 @@ public class CodingProjectWeek04 {
 			isHotOutside = false;
 		}
 
-		System.out.println("How much money do you have in your pocket? ");
+		System.out.print("\nHow much money do you have in your pocket? ");
 		moneyInPocket = sc.nextDouble();
 
 		Boolean isBuyDrink = willBuyDrink(isHotOutside, moneyInPocket);
@@ -318,38 +318,32 @@ public class CodingProjectWeek04 {
 		} else if (!isBuyDrink && moneyInPocket > 10.5 && !isHotOutside) {
 			System.out.println("It is not hot enough outside to buy a drink.");
 		} else {
-			System.out.println("You do not have enough money to buy a dirnk.");
+			System.out.println("You do not have enough money to buy a drink.");
 		}
-
-		sc.close();
 
 		/**
 		 * 13. Create a method of your own that solves a problem. In comments, write
 		 * what the method does and why you created it.
 		 */
-		
+
 		System.out.println("\n*****Question #13*****");
 
 		double moneySaved = 0.0, costToBuy = 0.0;
-		Scanner s = new Scanner(System.in);
-		
-		System.out.println("How much money do you have saved?" );
-		moneySaved = s.nextDouble();
-		
-		System.out.println("How much money does the pizza cost?" );
-		costToBuy = s.nextDouble();
-		
+
+		System.out.println("How much money do you have saved?");
+		moneySaved = sc.nextDouble();
+
+		System.out.println("How much money does the pizza cost?");
+		costToBuy = sc.nextDouble();
+
 		Boolean isAffordable = pizzaPartyPrice(moneySaved, costToBuy);
-		
-		if(isAffordable) {
+
+		if (isAffordable) {
 			System.out.println("You can buy the pizza. Enjoy!");
-		} else { 
+		} else {
 			System.out.println("You do not have enough money saved. Maybe another day.");
 		}
-		
-		s.close();
 	}
-
 
 	private static String concatenatedWord(String word, int n) {
 		String tempWord = "";
@@ -393,7 +387,7 @@ public class CodingProjectWeek04 {
 		if (isGreater100) {
 			System.out.println(") is greater than 100!");
 		} else {
-			System.out.println(") is not greater than 100!");
+			System.out.println(") are not greater than 100!");
 		}
 	}
 
@@ -442,14 +436,13 @@ public class CodingProjectWeek04 {
 			return false;
 		}
 	}
-	
+
 	private static Boolean pizzaPartyPrice(double moneySaved, double costToBuy) {
-		if(moneySaved >= costToBuy) {
+		if (moneySaved >= costToBuy) {
 			return true;
-		} else { 
+		} else {
 			return false;
 		}
 	}
-
 
 }
