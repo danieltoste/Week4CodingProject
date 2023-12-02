@@ -5,18 +5,15 @@ public class CodingProjectWeek04 {
 	public static void main(String[] args) {
 
 		/**
-		 * 1. Create an Array of int called ages that contains the following values: 3,
-		 * 9, 23, 64, 2, 8, 28, 93. a. Programmatically subtract the value of the first
-		 * element in the Array from the value in the last element of the Array (i.e. do
-		 * not use ages[7] in your code). Print the result to the console. b. Create a
-		 * new array of int called ages2 with 9 elements (ages2 will be longer than the
-		 * ages array, and have more elements). i. Make sure that there are 9 elements
-		 * of type int in this new array. ii. Repeat the subtraction from Step 1.a.
-		 * (Programmatically subtract the value of the first element in the new array
-		 * ages2 from the last element of ages2). iii. Show that using the index values
-		 * for the elements is dynamic (works for arrays of different lengths). c. Use a
-		 * loop to iterate through the Array and calculate the average age. Print the
-		 * result to the console.
+		 * 1. Create an Array of int called ages that contains the following values: 3,	9, 23, 64, 2, 8, 28, 93. 
+		 * 		a. Programmatically subtract the value of the first element in the Array from the value in the last element of the Array 
+		 * 			(i.e. do not use ages[7] in your code). Print the result to the console. 
+		 * 		b. Create a new array of int called ages2 with 9 elements (ages2 will be longer than the ages array, and have more elements). 
+		 * 			i. Make sure that there are 9 elements of type int in this new array. 
+		 * 			ii. Repeat the subtraction from Step 1.a. (Programmatically subtract the value of the first element in the new array
+		 * 				ages2 from the last element of ages2). 
+		 * 			iii. Show that using the index values for the elements is dynamic (works for arrays of different lengths). 
+		 * 		c. Use a loop to iterate through the Array and calculate the average age. Print the result to the console.
 		 */
 
 		System.out.println("*****Question #1*****");
@@ -38,14 +35,13 @@ public class CodingProjectWeek04 {
 
 		System.out.println("The difference between the first and last elements in the ages2 array is: " + difference);
 
-		// declare variable to hold the average age and temporary sum of all age values
-		// from both arrays
-		// declare agesCnt and agesCnt2 to be used as counters for each loop and made
-		// accessible outside the scope of "for"
+		/**
+		 * declare variable to hold the average age and temporary sum of all age values from both arrays
+		 * declare agesCnt and agesCnt2 to be used as counters for each loop and made accessible outside the scope of "for"
+		 */
 		int avgAges = 0, avgAges2 = 0, tempSumAges = 0, tempSumAges2 = 0, agesCnt = 0, agesCnt2 = 0;
 
-		// iterate through each array individually to calculate and store the average
-		// age
+		// iterate through each array individually to calculate and store the average age
 		for (; agesCnt < ages.length; agesCnt++) {
 			tempSumAges += ages[agesCnt];
 		}
@@ -62,11 +58,11 @@ public class CodingProjectWeek04 {
 
 		/**
 		 * 2. Create an Array of String called names that contains the following values:
-		 * “Sam”, “Tommy”, "Tim”, “Sally”, “Buck”, “Bob”. a. Use a loop to iterate
-		 * through the Array and calculate the average number of letters per name. Print
-		 * the result to the console. b. Use a loop to iterate through the Array again
-		 * and concatenate all the names together, separated by spaces, and print the
-		 * result to the console.
+		 * “Sam”, “Tommy”, "Tim”, “Sally”, “Buck”, “Bob”. 
+		 * 		a. Use a loop to iterate through the Array and calculate the average number of letters per name. 
+		 * 		Print the result to the console. 
+		 * 		b. Use a loop to iterate through the Array again and concatenate all the names together, 
+		 * 		separated by spaces, and print the result to the console.
 		 */
 
 		System.out.println("\n*****Question #2*****");
@@ -91,6 +87,7 @@ public class CodingProjectWeek04 {
 		String concatNames = "";
 
 		for (int i = 0; i < names.length; i++) {
+			//concatenate names but ensure the first name does not have the space to start
 			if (i == 0) {
 				concatNames += names[i];
 			} else {
@@ -115,7 +112,7 @@ public class CodingProjectWeek04 {
 
 		int[] q3Array = { 11, 22, 33 };
 		int arrLength = q3Array.length;
-		System.out.println("The last element of q3Array is: " + q3Array[arrLength - 1]);
+		System.out.println("In q3Array (11, 22, 33), the last element of q3Array is: " + q3Array[arrLength - 1]);
 
 		/**
 		 * 4. How do you access the first element of any Array?
@@ -127,7 +124,7 @@ public class CodingProjectWeek04 {
 		System.out.println("An Array of length 1 or greater will always have its first value stored in index 0.");
 
 		int[] q4Array = { 11, 22, 33 };
-		System.out.println("The first element of q4Array is: " + q4Array[0]);
+		System.out.println("in q4Array (11, 22, 33), the first element of q4Array is: " + q4Array[0]);
 
 		/**
 		 * 5. Create a new Array of int called nameLengths. Write a loop to iterate over
@@ -140,6 +137,8 @@ public class CodingProjectWeek04 {
 		int[] nameLengths = new int[names.length];
 
 		System.out.println("The length of each name in the names Array is: ");
+		
+		//add the lengths of each names element to the new Array - Print each indexes results
 		for (int i = 0; i < nameLengths.length; i++) {
 			nameLengths[i] = names[i].length();
 			System.out.println(i + ": " + nameLengths[i]);
@@ -167,11 +166,15 @@ public class CodingProjectWeek04 {
 
 		System.out.println("\n*****Question #7*****");
 
+		//Create a scanner object to be used for the rest of the application
 		Scanner sc = new Scanner(System.in);
 
+		//Accept user input for the word and number of concatenations
 		System.out.print("Please type a word that will be used for concatenation: ");
 		String word = sc.nextLine();
 
+		//Ensure at last one character was inserted by the console input
+		//if not, continue to ask for an input until one is entered
 		if (word.length() == 0) {
 			System.out.println();
 			do {
@@ -183,6 +186,7 @@ public class CodingProjectWeek04 {
 		System.out.print("\nPlease enter the number of times it will be concatenated (1-10): ");
 		int n = sc.nextInt();
 
+		//Ensure that the value entered allows for at least 1 concatenation with a maximum of 10
 		if (!(n >= 1 && n <= 10)) {
 			System.out.println();
 			do {
@@ -201,11 +205,14 @@ public class CodingProjectWeek04 {
 
 		System.out.println("\n*****Question #8*****");
 
+		//Clear the Scanner buffer
 		sc.nextLine();
 
 		System.out.print("Please enter a first name: ");
 		String firstName = sc.nextLine();
 
+        //Check that both the inputs for first and last name are not empty.
+		//If they are, ask for a valid input (not null).
 		if (firstName.length() == 0) {
 			System.out.println();
 			do {
@@ -234,11 +241,13 @@ public class CodingProjectWeek04 {
 
 		System.out.println("\n*****Question #9*****");
 
+		//2 Arrays are initialized to test the sum100CheckPrintout in both scenarios (great than or less than 100)
 		int[] numsArr1 = { 22, 41, 7, 38 }, numsArr2 = { 42, 7, -8, 3 };
 
 		Boolean isGreater100 = addArrayValues(numsArr1);
 		sum100CheckPrintout(isGreater100, numsArr1);
 
+		//Update isGreater100 with the results from the second Array
 		isGreater100 = addArrayValues(numsArr2);
 		sum100CheckPrintout(isGreater100, numsArr2);
 
@@ -286,12 +295,14 @@ public class CodingProjectWeek04 {
 		 */
 
 		System.out.println("\n*****Question #12*****");
+		
 		boolean isHotOutside = false;
 		double moneyInPocket = 0.0;
 
 		System.out.print("Is it hot outside today (Y/N)? ");
 		String hotAnswer = sc.next();
 
+		//Ignoring case, if the answer is not a Y or N character, ask the user again
 		if (!(hotAnswer.equalsIgnoreCase("y")) && !(hotAnswer.equalsIgnoreCase("n"))) {
 			System.out.println();
 			do {
@@ -300,6 +311,7 @@ public class CodingProjectWeek04 {
 			} while (!(hotAnswer.equalsIgnoreCase("y")) && !(hotAnswer.equalsIgnoreCase("n")));
 		}
 
+		//Set boolean based on user input
 		if (hotAnswer.equalsIgnoreCase("y")) {
 			isHotOutside = true;
 		} else if (hotAnswer.equalsIgnoreCase("n")) {
@@ -311,13 +323,18 @@ public class CodingProjectWeek04 {
 
 		Boolean isBuyDrink = willBuyDrink(isHotOutside, moneyInPocket);
 
+		//Cover all scenarios
 		if (isBuyDrink) {
+			//Hot outside and enough money
 			System.out.println("You should buy a drink today.");
 		} else if (!isBuyDrink && moneyInPocket < 10.5 && !isHotOutside) {
+			//willBuyDrink is false but it is because of both the money and temperature
 			System.out.println("It is not hot enough and you do not have enough money to buy a drink");
 		} else if (!isBuyDrink && moneyInPocket > 10.5 && !isHotOutside) {
+			//willBuyDrink is false but it is because of temperature
 			System.out.println("It is not hot enough outside to buy a drink.");
 		} else {
+			//willBuyDrink is false but it is because of money
 			System.out.println("You do not have enough money to buy a drink.");
 		}
 
@@ -326,16 +343,24 @@ public class CodingProjectWeek04 {
 		 * what the method does and why you created it.
 		 */
 
+		/**
+		 * The manager is looking to set up a pizza party because it is Friday.
+		 * A boolean method checks how much money is saved and compares it to the cost of pizza. 
+		 * If the money saved is equal to or greater than the cost, the method returns True.
+		 * It returns false, if the cost is greater than the amount saved.
+		 */
 		System.out.println("\n*****Question #13*****");
 
 		double moneySaved = 0.0, costToBuy = 0.0;
 
-		System.out.println("How much money do you have saved?");
+		//request user input for amount saved and cost of the pizza
+		System.out.print("How much money do you have saved?");
 		moneySaved = sc.nextDouble();
 
-		System.out.println("How much money does the pizza cost?");
+		System.out.print("\nHow much money does the pizza cost?");
 		costToBuy = sc.nextDouble();
 
+		//Validate the values entered against each other
 		Boolean isAffordable = pizzaPartyPrice(moneySaved, costToBuy);
 
 		if (isAffordable) {
@@ -343,8 +368,12 @@ public class CodingProjectWeek04 {
 		} else {
 			System.out.println("You do not have enough money saved. Maybe another day.");
 		}
+		
+		//Close the scanner to avoid memory leaks.
+		sc.close();
 	}
 
+	//Question 7 method
 	private static String concatenatedWord(String word, int n) {
 		String tempWord = "";
 
@@ -355,10 +384,12 @@ public class CodingProjectWeek04 {
 		return tempWord;
 	}
 
+	//Question 8 method
 	private static String fullName(String firstName, String lastName) {
 		return firstName + " " + lastName;
 	}
-
+	
+	//Question 9 method
 	private static Boolean addArrayValues(int[] numsArr) {
 		int total = 0;
 
@@ -373,17 +404,26 @@ public class CodingProjectWeek04 {
 		}
 	}
 
+	//Question 9 method
 	private static void sum100CheckPrintout(Boolean isGreater100, int[] numsArr) {
+		/**
+		 * This method was created to consolidate the code for Question 9.
+		 * This question tested multiple scenarios. Modularize the print statements.
+		 */
+		
+		//Print the values of the Array
 		System.out.print("The values in the Array (");
 
 		for (int i = 0; i < numsArr.length; i++) {
 			if (i == (numsArr.length - 1)) {
+				//If it is the last element, do not add the comma
 				System.out.print(numsArr[i]);
 			} else {
 				System.out.print(numsArr[i] + ", ");
 			}
 		}
 
+		//Print based on boolean parameter passed
 		if (isGreater100) {
 			System.out.println(") is greater than 100!");
 		} else {
@@ -391,6 +431,7 @@ public class CodingProjectWeek04 {
 		}
 	}
 
+	//Question 10 method
 	private static double doubleArrayAverage(double[] arrDouble) {
 		double tempSum = 0.0, avg = 0.0;
 		int count = 0;
@@ -405,6 +446,7 @@ public class CodingProjectWeek04 {
 		return avg;
 	}
 
+	//Question 11 method
 	private static Boolean doubleArrayAvgCheck(double[] arrDouble, double[] arrDouble2) {
 		double tempSum1 = 0.0, tempSum2 = 0.0, avg1 = 0.0, avg2 = 0.0;
 		int count1 = 0, count2 = 0;
@@ -429,6 +471,7 @@ public class CodingProjectWeek04 {
 		}
 	}
 
+	//Question 12 method
 	private static Boolean willBuyDrink(boolean isHotOutside, double moneyInPocket) {
 		if (isHotOutside && moneyInPocket > 10.5) {
 			return true;
@@ -437,7 +480,10 @@ public class CodingProjectWeek04 {
 		}
 	}
 
+	//Question 13 method
 	private static Boolean pizzaPartyPrice(double moneySaved, double costToBuy) {
+		
+		//validate the user has enough money compared to the cost
 		if (moneySaved >= costToBuy) {
 			return true;
 		} else {
