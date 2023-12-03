@@ -354,19 +354,19 @@ public class CodingProjectWeek04 {
 		double moneySaved = 0.0, costToBuy = 0.0;
 
 		//request user input for amount saved and cost of the pizza
-		System.out.print("How much money do you have saved?");
+		System.out.print("How much money do you have saved? ");
 		moneySaved = sc.nextDouble();
 
-		System.out.print("\nHow much money does the pizza cost?");
+		System.out.print("\nHow much money does the pizza cost? ");
 		costToBuy = sc.nextDouble();
 
 		//Validate the values entered against each other
 		Boolean isAffordable = pizzaPartyPrice(moneySaved, costToBuy);
 
 		if (isAffordable) {
-			System.out.println("You can buy the pizza. Enjoy!");
+			System.out.println("\nYou can buy the pizza. Enjoy!");
 		} else {
-			System.out.println("You do not have enough money saved. Maybe another day.");
+			System.out.println("\nYou do not have enough money saved. Maybe another day.");
 		}
 		
 		//Close the scanner to avoid memory leaks.
